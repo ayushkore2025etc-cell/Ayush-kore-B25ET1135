@@ -11,16 +11,15 @@ float average(float a, float b, float c) {
 
 int main() {
     float a, b, c;
-
-    cout << "Enter two numbers: ";
+  cout << "Enter two numbers: ";
     cin >> a >> b;
 
-    cout << "Average of two numbers = " << average(a, b) << endl;
+ cout << "Average of two numbers = " << average(a, b) << endl;
 
-    cout << "Enter three numbers: ";
+ cout << "Enter three numbers: ";
     cin >> a >> b >> c;
 
-    cout << "Average of three numbers = " << average(a, b, c) << endl;
+ cout << "Average of three numbers = " << average(a, b, c) << endl;
 
-    return 0;
+ return 0;
 }
