@@ -8,7 +8,7 @@ int main() {
     cin >> rows;
 
     for (int i = 0; i < rows; i++) {
-        // Print spaces for alignment
+        
         for (int j = 0; j < rows - i - 1; j++) {
             cout << " ";
         }
@@ -17,7 +17,6 @@ int main() {
         for (int j = 0; j <= i; j++) {
             cout << num << " ";
 
-            // Calculate the next value in the row
             num = num * (i - j) / (j + 1);
         }
 
