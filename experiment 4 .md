@@ -20,7 +20,7 @@ public:
         cout << "Square of the complex number is: "
              << realPart << " + " << imagPart << "i";
     }
-}
+};
 
 int main() {
     Complex c;
