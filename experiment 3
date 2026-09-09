@@ -1,102 +1,52 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int num;
-
-    cout << "enter the number :";
-    cin >> num;
-
-    int sum = 0;
-
-    for (int i = 0; i <= num; i++) {
-        if (i % 2 == 0) {
-            sum += i;
-        }
-    }
-
-    cout << "the sum is " << sum << endl;
-
-    for (int i = 0; i <= num; i++) {
-        if (i % 2 == 0) {
-            sum += i;
-            cout << i << " ";
-        }
-    }
-
-    return 0;
-}
-
-
-
-
-Sort code in array 
-
-
-
-#include <iostream>
-using namespace std;
-
-void readArray(int arr[], int n)
-{
-    cout << "Enter " << n << " elements: ";
-    for (int i = 0; i < n; i++)
-    {
+void read(int arr[], int len) {
+    cout << "Enter array elements: ";
+    for (int i = 0; i < len; i++) {
         cin >> arr[i];
     }
 }
 
-void displayArray(int arr[], int n)
-{
-    for (int i = 0; i < n; i++)
-    {
+void display(int arr[], int len) {
+    for (int i = 0; i < len; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
 }
 
-void swapNumbers(int &a, int &b)
-{
+void swap(int &a, int &b) {
     int temp = a;
     a = b;
     b = temp;
 }
 
-void sortArray(int arr[], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                swapNumbers(arr[j], arr[j + 1]);
+void sort(int arr[], int len) {
+    for (int i = 0; i < len - 1; i++) {
+        for (int j = 0; j < len - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
             }
         }
     }
 }
 
-int main()
-{
-    int n;
+int main() {
+    int len;
+    cout << "Define the length of the array: ";
+    cin >> len;
 
-    cout << "Enter the size of the array: ";
-    cin >> n;
+    int arr[len];
 
-    int arr[n];
+    read(arr, len);
 
-    readArray(arr, n);
+    cout << "The given array is: ";
+    display(arr, len);
 
-    cout << "\nOriginal Array: ";
-    displayArray(arr, n);
+    sort(arr, len);
 
-    sortArray(arr, n);
-
-    cout << "Sorted Array: ";
-    displayArray(arr, n);
+    cout << "The sorted array is: ";
+    display(arr, len);
 
     return 0;
 }
-
-
-
