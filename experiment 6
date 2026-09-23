@@ -1,0 +1,46 @@
+#include <iostream>       // Include the standard I/O stream library
+using namespace std;   
+
+class Complex {           // Define a class named Complex
+private:                  // Members below are private (accessible only within the class)
+    double real;           
+    double imag;           
+
+public:                   // Members below are public (accessible from outside the class)
+    Complex(double r = 0, double i = 0) {   // Constructor 
+        real = r;                            
+        imag = i;                       
+    }
+
+    Complex& operator+=(const Complex& other) {  
+        real += other.real;                      
+        imag += other.imag;                   
+        return *this;                       
+    }
+
+    void display() const {                   
+        cout << real;                      
+        if (imag >= 0)                        
+            cout << " + " << imag << "i";     
+        else                                   
+            cout << " - " << -imag << "i"; 
+        cout << endl;                          // Print a newline at the end
+    }
+};
+
+int main() {                                   // Main function
+    Complex c1(3.5, 2.5);                     
+    Complex c2(1.5, 4.0);                      
+
+    c1.display();                              
+
+    cout << "c2 = ";                           
+    c2.display();                              
+
+    c1 += c2;                            
+
+    cout << "After c1 += c2, c1 = ";            
+    c1.display();                               
+
+    return 0;                                    // Return 0  
+}
