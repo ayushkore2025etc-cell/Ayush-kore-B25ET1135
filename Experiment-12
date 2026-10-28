@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+// First namespace for arithmetic operations
+namespace Arithmetic
+{
+    void show()
+    {
+        int a = 10, b = 20;
+        cout << "Arithmetic namespace: "
+             << a << " + " << b << " = " << a + b << endl;
+    }
+}
+
+// Second namespace for geometry operations
+namespace Geometry
+{
+    void show()
+    {
+        int length = 6, breadth = 4;
+        cout << "Geometry namespace: rectangle area = "
+             << length * breadth << endl;
+    }
+}
+
+int main()
+{
+    // Calling functions using the scope resolution operator
+    Arithmetic::show();
+    Geometry::show();
+
+    return 0;
+}
