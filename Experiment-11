@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function template to find the maximum of two values
+template <typename T>
+T maximumValue(T a, T b)
+{
+    return (a > b) ? a : b;
+}
+
+// Class template to store and display a value
+template <typename T>
+class Box
+{
+private:
+    T value;
+
+public:
+    // Constructor to initialize the value
+    Box(T v)
+    {
+        value = v;
+    }
+
+    // Function to display the value
+    void display()
+    {
+        cout << "Box value = " << value << endl;
+    }
+};
+
+int main()
+{
+    // Demonstration of function template
+    int a = 25, b = 15;
+    double x = 3.5, y = 5.5;
+
+    cout << "Maximum integer = " << maximumValue(a, b) << endl;
+    cout << "Maximum double = " << maximumValue(x, y) << endl;
+
+    // Demonstration of class template
+    Box<int> box1(100);
+    Box<string> box2("C++ Templates");
+
+    box1.display();
+    box2.display();
+
+    return 0;
+}
