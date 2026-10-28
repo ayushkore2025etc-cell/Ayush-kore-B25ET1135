@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class String
+{
+    string str;
+
+public:
+    // Constructor
+    String()
+    {
+        cout << "Constructor is invoked." << endl;
+        cout << "Enter a string: ";
+        getline(cin, str);
+    }
+
+    // Display function
+    void display()
+    {
+        cout << "The string is: " << str << endl;
+    }
+
+    // Destructor
+    ~String()
+    {
+        cout << "Destructor is invoked." << endl;
+    }
+};
+
+int main()
+{
+    String s;
+    s.display();
+
+    return 0;
+}
