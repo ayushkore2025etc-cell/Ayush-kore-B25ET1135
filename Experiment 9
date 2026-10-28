@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class Product
+{
+public:
+    virtual void calculatePrice()
+    {
+        cout << "Calculating product price" << endl;
+    }
+};
+
+class Electronics : public Product
+{
+    float price;
+public:
+    Electronics(float p)
+    {
+        price = p;
+    }
+
+    void calculatePrice() override
+    {
+        cout << "Electronics Price: Rs. " << price * 1.18 << endl;
+    }
+};
+
+class Clothing : public Product
+{
+    float price;
+public:
+    Clothing(float p)
+    {
+        price = p;
+    }
+
+    void calculatePrice() override
+    {
+        cout << "Clothing Price: Rs. " << price * 1.05 << endl;
+    }
+};
+
+int main()
+{
+    Product *p;
+
+    Electronics e(1000);
+    Clothing c(500);
+
+    p = &e;
+    p->calculatePrice();
+
+    p = &c;
+    p->calculatePrice();
+
+    return 0;
+}
