@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee
+{
+protected:
+    int id;
+    string name;
+    int experience;
+
+public:
+    void getEmployee()
+    {
+        cout << "Enter Employee ID: ";
+        cin >> id;
+
+        cout << "Enter Employee Name: ";
+        cin.ignore();
+        getline(cin, name);
+
+        cout << "Enter Experience (in years): ";
+        cin >> experience;
+    }
+};
+
+class Promotion
+{
+protected:
+    float performance;
+
+public:
+    void getPerformance()
+    {
+        cout << "Enter Performance Rating (out of 10): ";
+        cin >> performance;
+    }
+};
+
+class Eligibility : public Employee, public Promotion
+{
+public:
+    void checkEligibility()
+    {
+        cout << "\n--- Employee Details ---" << endl;
+        cout << "Employee ID: " << id << endl;
+        cout << "Employee Name: " << name << endl;
+        cout << "Experience: " << experience << " years" << endl;
+        cout << "Performance Rating: " << performance << "/10" << endl;
+
+        if (experience >= 5 && performance >= 8)
+            cout << "Status: Eligible for Promotion" << endl;
+        else
+            cout << "Status: Not Eligible for Promotion" << endl;
+    }
+};
+
+int main()
+{
+    Eligibility e;
+
+    e.getEmployee();
+    e.getPerformance();
+    e.checkEligibility();
+
+    return 0;
+}
